@@ -1,5 +1,5 @@
-freertos.c:76:6:vApplicationGetIdleTaskMemory	24	static
-freertos.c:90:6:MX_FREERTOS_Init	128	static
-freertos.c:151:6:StartSender_HPT	32	static
-freertos.c:178:6:StartSender_LPT	32	static
-freertos.c:206:6:StartReceiver	128	static
+freertos.c:80:6:vApplicationGetIdleTaskMemory	24	static
+freertos.c:94:6:MX_FREERTOS_Init	128	static
+freertos.c:156:6:StartSender_HPT	32	static
+freertos.c:183:6:StartSender_LPT	32	static
+freertos.c:211:6:StartReceiver	128	static

@@ -487,6 +487,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  //Checking if the Queue is working correctly
   if(SimpleQHandle == 0){
  80005d0:	4b2d      	ldr	r3, [pc, #180]	; (8000688 <MX_FREERTOS_Init+0xdc>)
  80005d2:	681b      	ldr	r3, [r3, #0]
@@ -632,7 +633,7 @@ void StartSender_HPT(void const * argument)
  80006d6:	4811      	ldr	r0, [pc, #68]	; (800071c <StartSender_HPT+0x6c>)
  80006d8:	f001 fd13 	bl	8002102 <HAL_UART_Transmit>
 
-	  if (xQueueSend(SimpleQHandle, &i, portMAX_DELAY) == pdPASS){
+	  if (xQueueSend(SimpleQHandle, &i, portMAX_DELAY) == pdPASS){ //Send the value to the Queue and check if it has been received using the pdPASS mnemonic
  80006dc:	4b10      	ldr	r3, [pc, #64]	; (8000720 <StartSender_HPT+0x70>)
  80006de:	6818      	ldr	r0, [r3, #0]
  80006e0:	f107 0108 	add.w	r1, r7, #8

@@ -115,6 +115,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  //Checking if the Queue is working correctly
   if(SimpleQHandle == 0){
 	 char*str = "Unable to create Queue\n\n";
 	 HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
@@ -163,7 +164,7 @@ void StartSender_HPT(void const * argument)
 	  char*str = "Entered SENDER HPT Task\n Sendig a number to the queue\n\n";
 	  HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
 
-	  if (xQueueSend(SimpleQHandle, &i, portMAX_DELAY) == pdPASS){
+	  if (xQueueSend(SimpleQHandle, &i, portMAX_DELAY) == pdPASS){ //Send the value to the Queue and check if it has been received using the pdPASS mnemonic
 		  char*str2 = "Successfully sent the number\n Leaving SENDER HPT\n\n";
 		  HAL_UART_Transmit(&huart2, (uint8_t*)str2, strlen(str2), HAL_MAX_DELAY);
 	  }
