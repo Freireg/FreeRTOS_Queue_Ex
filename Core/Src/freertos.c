@@ -2,7 +2,11 @@
 /**
   ******************************************************************************
   * File Name          : freertos.c
-  * Description        : Code for freertos applications
+  * Description        : Simple example of how Queues works on FreeRTOS
+  * In this ex two tasks try to send a number to a third task and the queue should
+  * receive both numbers and send them in the right order
+  * note that the NormalPriority task have a lower delay time than the HighPriority
+  * So, the sequence of numbers should be 222 (HPT output) and two 111 (LPT output)
   ******************************************************************************
   * @attention
   *
